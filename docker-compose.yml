@@ -1,0 +1,9 @@
+app:
+  build: .
+  command: elm-reactor
+  volumes:
+    - .:/workspace
+    - $HOME/opt/elm:/elm
+  working_dir: /workspace
+  ports:
+    - "8000:8000"
