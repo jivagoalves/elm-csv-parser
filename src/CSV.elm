@@ -5,7 +5,7 @@ module CSV
 import Char exposing (isDigit)
 import List exposing (member)
 import Parser exposing (..)
-import Parser.Char exposing (between)
+import Parser.Char exposing (quoted)
 import Result.Extra exposing (isOk)
 
 type Cell = Cell (List Char)
@@ -29,11 +29,6 @@ eol = satisfy (\c -> c == '\n')
 
 noneOf : List Char -> Parser Char
 noneOf cs = satisfy (\c -> not <| c `member` cs)
-
--- TODO Use from parser library when published
-{-| Parse a parser between quotes `"` and `"`-}
-quoted : Parser result -> Parser result
-quoted = between '"' '"'
 
 quotedCell : Parser Cell
 quotedCell = Cell `map` (quoted <| many quotedChar)
