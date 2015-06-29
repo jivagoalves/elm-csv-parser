@@ -7,6 +7,11 @@ CSV Parser in Elm
 
 ```
 $ make
+```
+
+## Usage
+
+```
 $ elm-repl 
 Elm REPL 0.4 (Elm Platform 0.15)
   See usage examples at <https://github.com/elm-lang/elm-repl>
